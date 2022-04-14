@@ -2,4 +2,4 @@
 172.16.134.206 ansible_user=kunal
 
 [docker]
- 172.17.0.1ansible_ssh_pass=kunal ansible_ssh_user=kunal
+ 172.17.0.1 ansible_ssh_pass=kunal ansible_ssh_user=kunal
