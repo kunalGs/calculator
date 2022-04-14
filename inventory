@@ -1,5 +1,1 @@
-[ubuntu20]
-172.16.134.206 ansible_user=kunal
-
-[docker]
- 172.17.0.1 ansible_ssh_pass=kunal ansible_ssh_user=kunal
+localhost ansible_ssh_pass=kunal ansible_ssh_user=kunal
