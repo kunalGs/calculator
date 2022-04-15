@@ -1,8 +1,11 @@
 ---
-- name: Deploy a jar file
+- name: Pull docker image of Calculator
   hosts: all
   tasks:
-    - name: Copy jar file to home directory
-      copy:
-        src: ./target/calculatorDevOps-1.0-SNAPSHOT-jar-with-dependencies.jar
-        dest: ~/
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+
+    - name: pull docker image
+      shell: docker pull kunalg3s/calc:v1
