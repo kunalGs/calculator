@@ -2,14 +2,12 @@ package calculator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Calculator {
 
-    //private static final Logger logger = Logger.getClass("Calculator");
-    public static final Logger logger = LogManager.getLogger(Calculator.class);
-    
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
     public Calculator() {
     }
 
@@ -20,8 +18,8 @@ public class Calculator {
         double number1, number2;
         do {
             System.out.println("Calculator-DevOps, Choose to perform operation");
-            System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\nPress 5 to find max of two numbers\nPress 6 to find min of two numbers\n" +
-                    "Press 7 to exit\nEnter your choice: ");
+            System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\n" +
+                    "Press 5 to exit\nEnter your choice: ");
             int choice;
             try {
                 choice = scanner.nextInt();
@@ -56,7 +54,6 @@ public class Calculator {
                     System.out.println(number1+ " raised to power "+number2+" is : " + calculator.power(number1, number2));
                     System.out.println("\n");
                     break;
-              
                 case 4:
                     // find natural log
                     System.out.print("Enter a number : ");
@@ -65,27 +62,8 @@ public class Calculator {
                     System.out.println("\n");
 
                     break;
-                case 5:
-                    // MAX OF two numbers
-                    System.out.print("Enter the first number : ");
-                    number1 = scanner.nextDouble();
-                    System.out.print("Enter the second number : ");
-                    number2 = scanner.nextDouble();
-                    System.out.println("max of" + number1 + "   "+ number2 + " is : " + calculator.maxi(number1, number2));
-                    System.out.println("\n");
-                    break;
-                case 6:
-                    // MIN OF two numbers
-                    System.out.print("Enter the first number : ");
-                    number1 = scanner.nextDouble();
-                    System.out.print("Enter the second number : ");
-                    number2 = scanner.nextDouble();
-                    System.out.println("MIN of" + number1 + "   "+ number2 + " is : " + calculator.mini(number1, number2));
-                    System.out.println("\n");
-                    break;
-             
                 default:
-                    System.out.println("Exiting....");
+                    System.out.println("Exiting the container....");
                     return;
             }
         } while (true);
@@ -108,19 +86,6 @@ public class Calculator {
         return result;
     }
 
-    public double maxi(double number1, double number2) {
-        logger.info("[MAX of - " + number1 + "and ] " + number2);
-        double result = Math.max(number1,number2);
-        logger.info("[RESULT - MAX] - " + result);
-        return result;
-    }
-
-    public double mini(double number1, double number2) {
-        logger.info("[MIN of - " + number1 + "and ] " + number2);
-        double result = Math.min(number1,number2);
-        logger.info("[RESULT - MIN] - " + result);
-        return result;
-    }
 
     public double power(double number1, double number2) {
         logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
@@ -136,13 +101,13 @@ public class Calculator {
 
             if (number1 <0 ) {
                 result = Double.NaN;
-                throw new ArithmeticException("Throwing exception>>Case of NaN 0.0/0.0");
+                throw new ArithmeticException("Case of NaN 0.0/0.0");
             }
             else {
                 result = Math.log(number1);
             }
         } catch (ArithmeticException error) {
-            System.out.println("Exception Catch - Cannot find log of negative numbers " + error.getLocalizedMessage());
+            System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
         logger.info("[RESULT - NATURAL LOG] - " + result);
         return result;
