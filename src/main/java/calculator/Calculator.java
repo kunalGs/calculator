@@ -17,7 +17,7 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         double number1, number2;
         do {
-            System.out.println("Calculator-DevOps, Choose to perform operation");
+            System.out.println("*****************************************************************\n************* KUNAL Calculator-DevOps Program MENU **************\n*****************************************************************");
             System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\nPress 5 to find maximum of two numbers\nPress 6 to find minimum of two numbers\nPress 7 to find sum of two numbers\n" +
                     "Press 8 to exit\nEnter your choice: ");
             int choice;

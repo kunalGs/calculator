@@ -438,3 +438,5 @@
 2022-04-16 18:24:01.221 [main] INFO  calculator.Calculator - [RESULT - SQ ROOT] - 3.0
 2022-04-16 18:24:01.222 [main] INFO  calculator.Calculator - [SQ ROOT] - 16.0
 2022-04-16 18:24:01.222 [main] INFO  calculator.Calculator - [RESULT - SQ ROOT] - 4.0
+2022-04-16 19:36:14.339 [main] INFO  calculator.Calculator - [SUM OF 12.0 AND] 133.0
+2022-04-16 19:36:14.365 [main] INFO  calculator.Calculator - [RESULT - SUM] - 145.0
