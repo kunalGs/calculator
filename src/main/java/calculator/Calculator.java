@@ -18,8 +18,8 @@ public class Calculator {
         double number1, number2;
         do {
             System.out.println("Calculator-DevOps, Choose to perform operation");
-            System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\n" +
-                    "Press 5 to exit\nEnter your choice: ");
+            System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\nPress 5 to find maximum of two numbers\nPress 6 to find minimum of two numbers\nPress 7 to find sum of two numbers\n" +
+                    "Press 8 to exit\nEnter your choice: ");
             int choice;
             try {
                 choice = scanner.nextInt();
@@ -62,6 +62,39 @@ public class Calculator {
                     System.out.println("\n");
 
                     break;
+
+                case 5:
+                    // find max of the two elements
+                    System.out.print("Enter the first number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    number2 = scanner.nextDouble();
+                    System.out.println("maximum of "+number1+ " and "+number2+" is : " + calculator.maxi(number1, number2));
+                    System.out.println("\n");
+
+                    break;
+
+                case 6:
+                    // find min of the two elements
+                    System.out.print("Enter the first number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    number2 = scanner.nextDouble();
+                    System.out.println("minimum of "+number1+ " and "+number2+" is : " + calculator.mini(number1, number2));
+                    System.out.println("\n");
+
+                    break;
+
+                case 7:
+                    // find sum of the two elements
+                    System.out.print("Enter the first number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    number2 = scanner.nextDouble();
+                    System.out.println("sum of "+number1+ " and "+number2+" is : " + calculator.sum(number1, number2));
+                    System.out.println("\n");
+
+                    break;
                 default:
                     System.out.println("Exiting the container....");
                     return;
@@ -94,6 +127,26 @@ public class Calculator {
         return result;
     }
 
+    public double maxi(double number1, double number2) {
+        logger.info("[MAX  OF " + number1 + " AND] " + number2);
+        double result = Math.max(number1,number2);
+        logger.info("[RESULT - MAX] - " + result);
+        return result;
+    }
+
+    public double mini(double number1, double number2) {
+        logger.info("[MIN OF " + number1 + " AND] " + number2);
+        double result = Math.min(number1,number2);
+        logger.info("[RESULT - MIN] - " + result);
+        return result;
+    }
+
+    public double sum(double number1, double number2) {
+        logger.info("[SUM OF " + number1 + " AND] " + number2);
+        double result = number1 + number2 ;
+        logger.info("[RESULT - SUM] - " + result);
+        return result;
+    }
     public double naturalLog(double number1) {
         logger.info("[NATURAL LOG] - " + number1);
         double result = 0;
